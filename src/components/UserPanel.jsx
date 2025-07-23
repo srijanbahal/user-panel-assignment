@@ -3,7 +3,7 @@ import UserTable from './UserTable';
 import UserModal from './UserModal';
 import UserForm from './UserForm';
 import DeleteConfirmation from './DeleteConfirmation';
-import { Plus } from 'lucide-react';
+import { Plus, User } from 'lucide-react';
 
 const UserPanel = () => {
   const [users, setUsers] = useState([
