@@ -81,23 +81,23 @@ const UserForm = ({ user, onSubmit, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-gray-200">
-        <div className="flex justify-between items-center p-6 border-b border-gray-100 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-t-2xl">
-          <h2 className="text-2xl font-bold text-white">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+        <div className="flex justify-between items-center p-6 border-b border-gray-200">
+          <h2 className="text-xl font-medium text-gray-900">
             {user ? 'Edit User' : 'Add New User'}
           </h2>
           <button
             onClick={onClose}
-            className="text-white/80 hover:text-white p-2 rounded-full hover:bg-white/20 transition-all duration-200"
+            className="text-gray-400 hover:text-gray-600 p-1 rounded transition-colors"
           >
-            <X size={22} />
+            <X size={20} />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-8 space-y-6">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
-            <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
               Full Name *
             </label>
             <input
@@ -106,7 +106,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
                 errors.fullName ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Enter full name"
@@ -117,7 +117,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
               Email *
             </label>
             <input
@@ -126,7 +126,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Enter email address"
@@ -137,7 +137,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
               Password *
             </label>
             <input
@@ -146,7 +146,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
                 errors.password ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Enter password"
@@ -157,7 +157,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
           </div>
 
           <div>
-            <label htmlFor="role" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">
               Role *
             </label>
             <select
@@ -165,7 +165,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
             >
               <option value="Admin">Admin</option>
               <option value="Editor">Editor</option>
@@ -174,7 +174,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
           </div>
 
           <div>
-            <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">
               Phone Number *
             </label>
             <input
@@ -183,7 +183,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
               name="phoneNumber"
               value={formData.phoneNumber}
               onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
                 errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Enter phone number"
@@ -194,7 +194,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
           </div>
 
           <div>
-            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
               Address *
             </label>
             <textarea
@@ -203,7 +203,7 @@ const UserForm = ({ user, onSubmit, onClose }) => {
               value={formData.address}
               onChange={handleChange}
               rows={3}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 resize-none ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none ${
                 errors.address ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Enter address"
@@ -213,19 +213,19 @@ const UserForm = ({ user, onSubmit, onClose }) => {
             )}
           </div>
 
-          <div className="flex justify-end space-x-4 pt-6 border-t border-gray-100">
+          <div className="flex justify-end space-x-3 pt-4 border-t border-gray-200">
             <button
               type="button"
               onClick={onClose}
-              className="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl transition-all duration-200 font-semibold hover:scale-105"
+              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg transition-colors font-medium"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl flex items-center gap-3 transition-all duration-200 font-semibold hover:scale-105 shadow-lg"
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center gap-2 transition-colors font-medium"
             >
-              <Save size={18} />
+              <Save size={16} />
               {user ? 'Update User' : 'Add User'}
             </button>
           </div>

@@ -5,86 +5,86 @@ const UserModal = ({ user, onClose }) => {
   if (!user) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-gray-200">
-        <div className="flex justify-between items-center p-6 border-b border-gray-100 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-t-2xl">
-          <h2 className="text-2xl font-bold text-white">User Details</h2>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <div className="flex justify-between items-center p-6 border-b border-gray-200">
+          <h2 className="text-xl font-medium text-gray-900">User Details</h2>
           <button
             onClick={onClose}
-            className="text-white/80 hover:text-white p-2 rounded-full hover:bg-white/20 transition-all duration-200"
+            className="text-gray-400 hover:text-gray-600 p-1 rounded transition-colors"
           >
-            <X size={22} />
+            <X size={20} />
           </button>
         </div>
         
-        <div className="p-8 space-y-6">
-          <div className="flex items-center space-x-4">
+        <div className="p-6 space-y-4">
+          <div className="flex items-center space-x-3">
             <div className="flex-shrink-0">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
-                <User className="w-8 h-8 text-white" />
+              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                <User className="w-6 h-6 text-gray-600" />
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-gray-900">{user.fullName}</h3>
-              <p className="text-sm text-gray-500 font-medium">User ID: #{user.id}</p>
+              <h3 className="text-lg font-medium text-gray-900">{user.fullName}</h3>
+              <p className="text-sm text-gray-500">ID: #{user.id}</p>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                <Mail className="w-5 h-5 text-blue-600" />
+          <div className="space-y-3">
+            <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                <Mail className="w-4 h-4 text-blue-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-700">Email Address</p>
-                <p className="text-base text-gray-900 font-medium">{user.email}</p>
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Email</p>
+                <p className="text-sm text-gray-900">{user.email}</p>
               </div>
             </div>
 
-            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-purple-600" />
+            <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+              <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                <Shield className="w-4 h-4 text-purple-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-700">User Role</p>
-                <span className={`inline-flex px-3 py-1 text-sm font-semibold rounded-full mt-1 ${
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Role</p>
+                <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
                   user.role === 'Admin' 
-                    ? 'bg-gradient-to-r from-red-100 to-red-200 text-red-800 border border-red-200'
+                    ? 'bg-red-100 text-red-800'
                     : user.role === 'Editor'
-                    ? 'bg-gradient-to-r from-amber-100 to-amber-200 text-amber-800 border border-amber-200'
-                    : 'bg-gradient-to-r from-emerald-100 to-emerald-200 text-emerald-800 border border-emerald-200'
+                    ? 'bg-blue-100 text-blue-800'
+                    : 'bg-gray-100 text-gray-800'
                 }`}>
                   {user.role}
                 </span>
               </div>
             </div>
 
-            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                <Phone className="w-5 h-5 text-green-600" />
+            <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+              <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                <Phone className="w-4 h-4 text-green-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-700">Phone Number</p>
-                <p className="text-base text-gray-900 font-medium">{user.phoneNumber}</p>
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Phone</p>
+                <p className="text-sm text-gray-900">{user.phoneNumber}</p>
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl">
-              <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-orange-600" />
+            <div className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
+              <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                <MapPin className="w-4 h-4 text-orange-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-700">Address</p>
-                <p className="text-base text-gray-900 font-medium leading-relaxed">{user.address}</p>
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Address</p>
+                <p className="text-sm text-gray-900">{user.address}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="px-8 py-6 border-t border-gray-100 flex justify-end bg-gray-50 rounded-b-2xl">
+        <div className="px-6 py-4 border-t border-gray-200 flex justify-end bg-gray-50">
           <button
             onClick={onClose}
-            className="px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white rounded-xl transition-all duration-200 font-semibold hover:scale-105 shadow-lg"
+            className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors font-medium"
           >
             Close
           </button>
