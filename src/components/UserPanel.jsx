@@ -99,20 +99,25 @@ const UserPanel = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="bg-white rounded-lg shadow-lg">
-        <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-800">User Management Panel</h1>
+    <div className="container mx-auto px-6 py-12">
+      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20">
+        <div className="px-8 py-6 border-b border-gray-100 flex justify-between items-center bg-gradient-to-r from-indigo-600 to-purple-600 rounded-t-2xl">
+          <h1 className="text-3xl font-bold text-white flex items-center gap-3">
+            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+              <User className="w-6 h-6 text-white" />
+            </div>
+            User Management Panel
+          </h1>
           <button
             onClick={handleAddUser}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors duration-200"
+            className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-xl flex items-center gap-3 transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-white/30"
           >
-            <Plus size={20} />
+            <Plus size={22} />
             Add User
           </button>
         </div>
 
-        <div className="p-6">
+        <div className="p-8">
           <UserTable
             users={users}
             onView={handleViewUser}
